@@ -35,7 +35,7 @@ In a store:
 import axios from 'axios'
 import Hydrated from 'hydrated'
 
-export default class RaceStore extends Hydrated {
+export default class RaceStore implements Hydrated {
   races: any[] = []
   async hydrate() {
     const { data } = await axios.get('/races')
