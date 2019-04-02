@@ -12,7 +12,7 @@ Hydrated.hydrate = async (...args) => {
   try {
     const promises = []
     for (const key in Hydrated.stores) {
-      if (args.length && args.indexOf(key) !== -1) continue
+      if (args.length && args.indexOf(key) === -1) continue
       promises.push(Hydrated.stores[key].hydrate())
     }
     await Promise.all(promises)
